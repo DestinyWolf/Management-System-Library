@@ -8,24 +8,18 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import prog.pbl.LibraryException.estoqueExceptions.LivroException;
 import prog.pbl.dao.MasterDao;
 import prog.pbl.model.Sistema;
-import prog.pbl.model.emprestimo.Emprestimo;
-import prog.pbl.model.emprestimo.FilaDeReserva;
 import prog.pbl.model.estoque.Livro;
-import prog.pbl.util.Data;
 
 import java.net.URL;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
-import static prog.pbl.controllers.AdmTela01.admTela01;
-import static prog.pbl.controllers.AnaliseLivro.analiseLivro;
-import static prog.pbl.controllers.BibliotecarioTela01.bibliotecarioTela01;
+import static prog.pbl.controllers.AdmHomeController.admHomeController;
+import static prog.pbl.controllers.InfoBookController.infoBookController;
+import static prog.pbl.controllers.LibarianHomeController.libarianHomeController;
 import static prog.pbl.controllers.GuestHomeController.guestHomeController;
-import static prog.pbl.controllers.LeitorTela01.leitorTela01;
-import static prog.pbl.controllers.MainWindow.mainWindow;
+import static prog.pbl.controllers.ReaderHomeController.readerHomeController;
 
 public class BookCreateController implements Initializable{
     private Stage stage;
@@ -70,9 +64,9 @@ public class BookCreateController implements Initializable{
     @FXML
     void voltarButtonAction(ActionEvent event) {
         switch (Sistema.currentLogMember()){
-            case 0 -> admTela01.refreshScreen();
-            case 1 -> bibliotecarioTela01.refreshScreen();
-            case 2 -> leitorTela01.refreshScreen();
+            case 0 -> admHomeController.refreshScreen();
+            case 1 -> libarianHomeController.refreshScreen();
+            case 2 -> readerHomeController.refreshScreen();
             case 3 -> guestHomeController.refreshScreen();
         }
 
@@ -125,11 +119,11 @@ public class BookCreateController implements Initializable{
             alert.setTitle("Concluido");
             alert.setContentText("Livro adicionado com sucesso");
             switch (Sistema.currentLogMember()){
-                case 0 -> admTela01.callToShowInRight("/prog/pbl/AnaliseLivroPage.fxml");
-                case 1 -> bibliotecarioTela01.callToShowInRight("/prog/pbl/AnalizeLivroPage.fxml");
+                case 0 -> admHomeController.callToShowInRight("/prog/pbl/InfoBookPage.fxml");
+                case 1 -> libarianHomeController.callToShowInRight("/prog/pbl/AnalizeLivroPage.fxml");
             }
 
-            analiseLivro.setLivro(livro);
+            infoBookController.setLivro(livro);
             alert.show();
             System.out.println("chegou aqui");
         }

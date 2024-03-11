@@ -1,37 +1,22 @@
 package prog.pbl.controllers;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.text.Text;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import prog.pbl.dao.MasterDao;
 import prog.pbl.model.Sistema;
-import prog.pbl.model.estoque.Livro;
-import prog.pbl.model.usuarios.Administrador;
-import prog.pbl.model.usuarios.Pessoa;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static prog.pbl.controllers.AdmTela01.admTela01;
-import static prog.pbl.controllers.BibliotecarioTela01.bibliotecarioTela01;
+import static prog.pbl.controllers.AdmHomeController.admHomeController;
+import static prog.pbl.controllers.LibarianHomeController.libarianHomeController;
 import static prog.pbl.controllers.BookCreateController.bookCreateController;
 import static prog.pbl.controllers.GuestHomeController.guestHomeController;
 import static prog.pbl.controllers.InfoUserController.infoUserController;
-import static prog.pbl.controllers.LeitorTela01.leitorTela01;
+import static prog.pbl.controllers.ReaderHomeController.readerHomeController;
 import static prog.pbl.controllers.MainWindow.mainWindow;
 import static prog.pbl.controllers.UserCreateController.userCreateController;
 
@@ -103,13 +88,13 @@ public class UserAreaController implements Initializable {
     private void showInformations() {
         String url = "/prog/pbl/InfoUserPage.fxml";
         if(Sistema.getSessaoAtualBibliotecario() != null) {
-            bibliotecarioTela01.callToShowInRight(url);
+            libarianHomeController.callToShowInRight(url);
             infoUserController.setUser(Sistema.getSessaoAtualBibliotecario());
         } else if (Sistema.getSessaoAtualLeitor() != null) {
-            leitorTela01.callToShowInRight(url);
+            readerHomeController.callToShowInRight(url);
             infoUserController.setUser(Sistema.getSessaoAtualLeitor());
         } else {
-            admTela01.callToShowInRight(url);
+            admHomeController.callToShowInRight(url);
             infoUserController.setUser(Sistema.getSessaoAtualAdministrador());
         }
 
@@ -131,11 +116,11 @@ public class UserAreaController implements Initializable {
 
                 switch (text) {
                     case "Livro" -> {
-                        admTela01.callToShowInRight("/prog/pbl/BookCreatePage.fxml");
+                        admHomeController.callToShowInRight("/prog/pbl/BookCreatePage.fxml");
                         bookCreateController.setLivro();
                     }
                     case "Usuario" -> {
-                        admTela01.callToShowInRight("/prog/pbl/UserCreatePage.fxml");
+                        admHomeController.callToShowInRight("/prog/pbl/UserCreatePage.fxml");
                         userCreateController.setUser();
                     }
                 }
@@ -144,11 +129,11 @@ public class UserAreaController implements Initializable {
                 String text = createBox.getValue();
 
                 if (text.equals("Livro")) {
-                    bibliotecarioTela01.callToShowInRight("/prog/pbl/BookCreatePage.fxml");
+                    libarianHomeController.callToShowInRight("/prog/pbl/BookCreatePage.fxml");
                     bookCreateController.setLivro();
                 }
             }
-            case 2 -> leitorTela01.refreshScreen();
+            case 2 -> readerHomeController.refreshScreen();
             case 3 -> guestHomeController.refreshScreen();
         }
 
@@ -156,28 +141,28 @@ public class UserAreaController implements Initializable {
 
     }
     public void showRelatorio(){
-        admTela01.callToShowInRight("/prog/pbl/Relatorio.fxml");
+        admHomeController.callToShowInRight("/prog/pbl/LogPage.fxml");
     }
 
     public void showEmprestimo() {
-        String url = "/prog/pbl/ListEmprestimosPage.fxml";
+        String url = "/prog/pbl/ListLoanPage.fxml";
         if(Sistema.getSessaoAtualBibliotecario() != null) {
-            bibliotecarioTela01.callToShowInCenter(url);
+            libarianHomeController.callToShowInCenter(url);
         } else if (Sistema.getSessaoAtualLeitor() != null) {
-            leitorTela01.callToShowInCenter(url);
+            readerHomeController.callToShowInCenter(url);
         } else {
-            admTela01.callToShowInCenter(url);
+            admHomeController.callToShowInCenter(url);
         }
     }
 
     public void showReserva() {
         String url = "/prog/pbl/ListReservasPage.fxml";
         if(Sistema.getSessaoAtualBibliotecario() != null) {
-            bibliotecarioTela01.callToShowInCenter(url);
+            libarianHomeController.callToShowInCenter(url);
         } else if (Sistema.getSessaoAtualLeitor() != null) {
-            leitorTela01.callToShowInCenter(url);
+            readerHomeController.callToShowInCenter(url);
         } else {
-            admTela01.callToShowInCenter(url);
+            admHomeController.callToShowInCenter(url);
         }
     }
 

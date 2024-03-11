@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane id="Conteiner" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: b6b6b0;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prog.pbl.controllers.MainWindowController">
+<Pane id="Conteiner" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: b6b6b0;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prog.pbl.controllers.LoginController">
    <children>
       <Button fx:id="loginGuestBtn" layoutX="460.0" layoutY="557.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="259.0" style="-fx-background-radius: 20; -fx-alignment: center; -fx-border-color: transparent; -bor: 0;" text="Sign in as Guest">
          <cursor>

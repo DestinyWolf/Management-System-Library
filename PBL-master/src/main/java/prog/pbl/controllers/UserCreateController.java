@@ -1,38 +1,23 @@
 package prog.pbl.controllers;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.text.Text;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
-import prog.pbl.LibraryException.usersexcepitions.LeitorException;
 import prog.pbl.dao.MasterDao;
 import prog.pbl.model.Sistema;
-import prog.pbl.model.estoque.Livro;
 import prog.pbl.model.usuarios.Administrador;
 import prog.pbl.model.usuarios.Bibliotecario;
 import prog.pbl.model.usuarios.Leitor;
-import prog.pbl.model.usuarios.Pessoa;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
 
-import static prog.pbl.controllers.AdmTela01.admTela01;
-import static prog.pbl.controllers.BibliotecarioTela01.bibliotecarioTela01;
+import static prog.pbl.controllers.AdmHomeController.admHomeController;
 import static prog.pbl.controllers.InfoUserController.infoUserController;
-import static prog.pbl.controllers.LeitorTela01.leitorTela01;
 import static prog.pbl.controllers.MainWindow.mainWindow;
-import static prog.pbl.controllers.MainWindow.openPage;
 
 public class UserCreateController implements Initializable{
 
@@ -164,8 +149,8 @@ public class UserCreateController implements Initializable{
 
 
 
-                    admTela01.refreshScreen();
-                    admTela01.callToShowInRight(url);
+                    admHomeController.refreshScreen();
+                    admHomeController.callToShowInRight(url);
                     infoUserController.setUser(administrador);
                 } catch (Exception e) {
                     alert.setContentText(e.getMessage());
@@ -176,8 +161,8 @@ public class UserCreateController implements Initializable{
                 try {
                     Bibliotecario bibliotecario = new Bibliotecario(name, passWord, id, cargo);
                     MasterDao.getBibliotecarioDao().save(bibliotecario);
-                    admTela01.refreshScreen();
-                    admTela01.callToShowInRight(url);
+                    admHomeController.refreshScreen();
+                    admHomeController.callToShowInRight(url);
                     infoUserController.setUser(bibliotecario);
                 } catch (Exception e) {
                     alert.setContentText(e.getMessage());
@@ -192,8 +177,8 @@ public class UserCreateController implements Initializable{
 
 
 
-                    admTela01.refreshScreen();
-                    admTela01.callToShowInRight(url);
+                    admHomeController.refreshScreen();
+                    admHomeController.callToShowInRight(url);
                     infoUserController.setUser(leitor);
                 } catch (Exception e) {
                     alert.setContentText(e.getMessage());

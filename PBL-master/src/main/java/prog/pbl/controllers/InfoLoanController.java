@@ -17,11 +17,11 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-import static prog.pbl.controllers.AdmTela01.admTela01;
-import static prog.pbl.controllers.BibliotecarioTela01.bibliotecarioTela01;
-import static prog.pbl.controllers.LeitorTela01.leitorTela01;
+import static prog.pbl.controllers.AdmHomeController.admHomeController;
+import static prog.pbl.controllers.LibarianHomeController.libarianHomeController;
+import static prog.pbl.controllers.ReaderHomeController.readerHomeController;
 
-public class AnaliseEmprestimo implements Initializable{
+public class InfoLoanController implements Initializable{
     private Stage stage;
     private Emprestimo emprestimo;
 
@@ -63,27 +63,27 @@ public class AnaliseEmprestimo implements Initializable{
     @FXML
     private Button deleteBtn;
 
-    public static AnaliseEmprestimo analiseEmprestimo;
+    public static InfoLoanController infoLoanController;
 
     @FXML
     void voltarButtonAction(ActionEvent event) {
         switch (Sistema.currentLogMember()){
-            case 0 -> admTela01.refreshScreen();
-            case 1 -> bibliotecarioTela01.refreshScreen();
-            case 2 -> leitorTela01.refreshScreen();
+            case 0 -> admHomeController.refreshScreen();
+            case 1 -> libarianHomeController.refreshScreen();
+            case 2 -> readerHomeController.refreshScreen();
         }
 
     }
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        analiseEmprestimo = this;
+        infoLoanController = this;
         this.setStage(stage);
     }
 
 
     public void setStage(Stage stage) {
         this.stage = stage;
-        analiseEmprestimo = this;
+        infoLoanController = this;
     }
 
     public void setEmprestimo(Emprestimo emprestimo) {
@@ -148,7 +148,7 @@ public class AnaliseEmprestimo implements Initializable{
             alert.setContentText("Livro devolvido com sucesso");
             alert.setTitle("Sucesso!");
             alert.show();
-            bibliotecarioTela01.refreshScreen();
+            libarianHomeController.refreshScreen();
         } catch (Exception e) {
             alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText(e.getMessage());
@@ -168,7 +168,7 @@ public class AnaliseEmprestimo implements Initializable{
             alert.setContentText("Emprestimo Deletado");
             alert.setTitle("Sucesso!");
             alert.show();
-            admTela01.refreshScreen();
+            admHomeController.refreshScreen();
         } catch (Exception e) {
 
             alert = new Alert(Alert.AlertType.ERROR);
@@ -189,7 +189,7 @@ public class AnaliseEmprestimo implements Initializable{
             alert.setContentText("Renovação realizada com sucesso");
             alert.setTitle("Concluido");
             alert.show();
-            leitorTela01.refreshScreen();
+            readerHomeController.refreshScreen();
         } catch (Exception e) {
             alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText(e.getMessage());
@@ -273,8 +273,8 @@ public class AnaliseEmprestimo implements Initializable{
             alert.setTitle("Concluido");
             alert.setContentText("Emprestimo atualizado com sucesso");
             editBtn.setText("Edit");
-            admTela01.callToShowInRight("/prog/pbl/AnaliseEmprestimo.fxml");
-            AnaliseEmprestimo.analiseEmprestimo.setEmprestimo(emprestimo1);
+            admHomeController.callToShowInRight("/prog/pbl/InfoLoanPage.fxml");
+            InfoLoanController.infoLoanController.setEmprestimo(emprestimo1);
             alert.show();
         } catch (Exception e) {
             alert = new Alert(Alert.AlertType.ERROR);

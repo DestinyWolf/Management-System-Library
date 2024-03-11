@@ -13,20 +13,18 @@ import prog.pbl.model.Sistema;
 import prog.pbl.model.emprestimo.Emprestimo;
 import prog.pbl.model.emprestimo.FilaDeReserva;
 import prog.pbl.model.estoque.Livro;
-import prog.pbl.util.Data;
 
 import java.net.URL;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
-import static prog.pbl.controllers.AdmTela01.admTela01;
-import static prog.pbl.controllers.BibliotecarioTela01.bibliotecarioTela01;
-import static prog.pbl.controllers.EmprestimoCreateController.emprestimoCreateController;
+import static prog.pbl.controllers.AdmHomeController.admHomeController;
+import static prog.pbl.controllers.LibarianHomeController.libarianHomeController;
+import static prog.pbl.controllers.LoanCreateController.loanCreateController;
 import static prog.pbl.controllers.GuestHomeController.guestHomeController;
-import static prog.pbl.controllers.LeitorTela01.leitorTela01;
+import static prog.pbl.controllers.ReaderHomeController.readerHomeController;
 import static prog.pbl.controllers.MainWindow.mainWindow;
 
-public class AnaliseLivro implements Initializable{
+public class InfoBookController implements Initializable{
     private Stage stage;
     private Livro livro;
     @FXML
@@ -69,14 +67,14 @@ public class AnaliseLivro implements Initializable{
     @FXML
     private Button deleteBtn;
 
-    public static AnaliseLivro analiseLivro;
+    public static InfoBookController infoBookController;
 
     @FXML
     void voltarButtonAction(ActionEvent event) {
         switch (Sistema.currentLogMember()){
-            case 0 -> admTela01.refreshScreen();
-            case 1 -> bibliotecarioTela01.refreshScreen();
-            case 2 -> leitorTela01.refreshScreen();
+            case 0 -> admHomeController.refreshScreen();
+            case 1 -> libarianHomeController.refreshScreen();
+            case 2 -> readerHomeController.refreshScreen();
             case 3 -> guestHomeController.refreshScreen();
         }
 
@@ -84,14 +82,14 @@ public class AnaliseLivro implements Initializable{
     }
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        analiseLivro = this;
+        infoBookController = this;
         this.setStage(stage);
     }
 
 
     public void setStage(Stage stage) {
         this.stage = stage;
-        analiseLivro = this;
+        infoBookController = this;
     }
 
     public void setLivro(Livro livro) {
@@ -154,8 +152,8 @@ public class AnaliseLivro implements Initializable{
         Alert alert;
 
         try{
-            bibliotecarioTela01.callToShowInRight("/prog/pbl/EmprestimoCreatePage.fxml");
-            emprestimoCreateController.setEmprestimo(livro);
+            libarianHomeController.callToShowInRight("/prog/pbl/LoanCreatePage.fxml");
+            loanCreateController.setEmprestimo(livro);
         } catch (Exception e) {
             alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText(e.getMessage());
@@ -175,7 +173,7 @@ public class AnaliseLivro implements Initializable{
             alert.setContentText("Emprestimo Deletado");
             alert.setTitle("Sucesso!");
             alert.show();
-            admTela01.refreshScreen();
+            admHomeController.refreshScreen();
         } catch (Exception e) {
 
             alert = new Alert(Alert.AlertType.ERROR);
@@ -201,7 +199,7 @@ public class AnaliseLivro implements Initializable{
             alert.setContentText("Renovação realizada com sucesso");
             alert.setTitle("Concluido");
             alert.show();
-            leitorTela01.refreshScreen();
+            readerHomeController.refreshScreen();
         } catch (Exception e) {
             alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText(e.getMessage());
@@ -264,8 +262,8 @@ public class AnaliseLivro implements Initializable{
             alert.setTitle("Concluido");
             alert.setContentText("Livro atualizado com sucesso");
             editBtn.setText("Edit");
-            admTela01.callToShowInRight("/prog/pbl/AnaliseLivroPage.fxml");
-            analiseLivro.setLivro(livro1);
+            admHomeController.callToShowInRight("/prog/pbl/InfoBookPage.fxml");
+            infoBookController.setLivro(livro1);
             alert.show();
         } catch (Exception e) {
             alert = new Alert(Alert.AlertType.ERROR);

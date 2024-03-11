@@ -3,14 +3,13 @@ package prog.pbl.controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import prog.pbl.model.relatorio.Relatorios;
 
-import static prog.pbl.controllers.AdmTela01.admTela01;
+import static prog.pbl.controllers.AdmHomeController.admHomeController;
 
-public class Relatorio {
+public class LogController {
 
     @FXML
     private TextField QntLivros;
@@ -49,7 +48,7 @@ public class Relatorio {
 
     @FXML
     void voltarButtonAction(ActionEvent event) {
-        admTela01.refreshScreen();
+        admHomeController.refreshScreen();
     }
 
     public void setStage(Stage stage) {

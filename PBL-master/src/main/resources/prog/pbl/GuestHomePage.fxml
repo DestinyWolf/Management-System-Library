@@ -8,11 +8,12 @@
       <Pane>
          <TextField fx:id="searchInputText" layoutX="24.0" layoutY="45.0" prefHeight="25.0" prefWidth="782.0" promptText="Pesquisar" />
          <Button fx:id="searchBtn" layoutX="818.0" layoutY="45.0" mnemonicParsing="false" text="🔎" />
-         <ChoiceBox fx:id="searchTypeChoiceBox" layoutX="867.0" layoutY="45.0" prefWidth="150.0" />
+         <ChoiceBox fx:id="searchTypeChoiceBox" layoutX="867.0" layoutY="45.0" prefHeight="25.0" prefWidth="77.0" />
+         <Button fx:id="voltarBtn" layoutX="970.0" layoutY="45.0" mnemonicParsing="false" text="Sair" />
       </Pane>
    </top>
    <center>
-      <BorderPane fx:id="secondBorderPane"  prefHeight="520.0" prefWidth="360.0" BorderPane.alignment="CENTER">
+      <BorderPane fx:id="secondBorderPane" prefHeight="520.0" prefWidth="360.0" BorderPane.alignment="CENTER">
 
       </BorderPane>
    </center>

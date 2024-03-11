@@ -1,33 +1,22 @@
 package prog.pbl.controllers;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.text.Text;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 import prog.pbl.dao.MasterDao;
 import prog.pbl.model.Sistema;
-import prog.pbl.model.estoque.Livro;
-import prog.pbl.model.usuarios.Pessoa;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import static prog.pbl.controllers.MainWindow.mainWindow;
 
-public class MainWindowController  implements Initializable{
+public class LoginController implements Initializable{
 
-    static MainWindowController mainWindowController;
+    static LoginController loginController;
 
 
 
@@ -49,7 +38,7 @@ public class MainWindowController  implements Initializable{
 
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        mainWindowController = this;
+        loginController = this;
         this.setScreen();
     }
 

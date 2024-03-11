@@ -8,7 +8,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ListView;
 import javafx.scene.control.cell.TextFieldListCell;
 import prog.pbl.dao.MasterDao;
-import prog.pbl.model.emprestimo.Emprestimo;
 import prog.pbl.model.estoque.Livro;
 import prog.pbl.model.usuarios.Administrador;
 import prog.pbl.model.usuarios.Bibliotecario;
@@ -18,14 +17,13 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import static prog.pbl.controllers.AdmTela01.admTela01;
-import static prog.pbl.controllers.AnaliseEmprestimo.analiseEmprestimo;
+import static prog.pbl.controllers.AdmHomeController.admHomeController;
 import static prog.pbl.controllers.InfoUserController.infoUserController;
 
 
-public class ListUsuariosController implements Initializable {
+public class ListUsersController implements Initializable {
 
-    static ListUsuariosController listLivrosController;
+    static ListUsersController listLivrosController;
 
     @FXML
     private ListView<String> listUsuarios;
@@ -105,7 +103,7 @@ public class ListUsuariosController implements Initializable {
                 }
 
 
-                admTela01.callToShowInRight("/prog/pbl/InfoUserPage.fxml");
+                admHomeController.callToShowInRight("/prog/pbl/InfoUserPage.fxml");
                 infoUserController.setUser(obj);
             } catch (Exception e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);

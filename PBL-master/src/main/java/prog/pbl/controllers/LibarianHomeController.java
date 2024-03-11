@@ -1,26 +1,15 @@
 package prog.pbl.controllers;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 import prog.pbl.dao.MasterDao;
-import prog.pbl.model.Sistema;
 import prog.pbl.model.estoque.Livro;
-import prog.pbl.model.usuarios.Administrador;
-import prog.pbl.model.usuarios.Pessoa;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.LinkedList;
 import java.util.List;
@@ -31,16 +20,12 @@ import static prog.pbl.controllers.ListLivrosController.listLivrosController;
 import static prog.pbl.controllers.MainWindow.mainWindow;
 import static prog.pbl.controllers.MainWindow.openPage;
 
-public class AdmTela01 implements Initializable{
+public class LibarianHomeController implements Initializable{
 
-    static AdmTela01 admTela01;
-
-    @FXML
-    private BorderPane mainBorderPane;
+    static LibarianHomeController libarianHomeController;
 
     @FXML
     private BorderPane secondBorderPane;
-
     @FXML
     private Button searchBtn;
 
@@ -50,9 +35,12 @@ public class AdmTela01 implements Initializable{
     @FXML
     private ChoiceBox<String> searchTypeChoiceBox;
 
+    @FXML
+    private BorderPane mainBorderPane;
+
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        admTela01 = this;
+        libarianHomeController = this;
         this.setScreen();
     }
 
@@ -60,11 +48,11 @@ public class AdmTela01 implements Initializable{
     void setScreen() {
 
 
-        mainBorderPane.setLeft(openPage("/prog/pbl/userAreaPage.fxml"));
-        secondBorderPane.setTop(openPage("/prog/pbl/ListEmprestimosPage.fxml"));
-        secondBorderPane.setBottom(openPage("/prog/pbl/ListUsuariosPage.fxml"));
+        mainBorderPane.setLeft(openPage("/prog/pbl/UserAreaPage.fxml"));
+        secondBorderPane.setTop(openPage("/prog/pbl/ListLivrosPage.fxml"));
+        secondBorderPane.setBottom(openPage("/prog/pbl/ListReservasPage.fxml"));
 
-
+        listLivrosController.setListView(MasterDao.getLivroDao().findAll());
 
         searchTypeChoiceBox.getItems().addAll("Isbn","Categoria","Autor", "Nome", "Mais populares");
         searchTypeChoiceBox.setValue("Isbn");
@@ -93,7 +81,7 @@ public class AdmTela01 implements Initializable{
 
     @FXML
     public void refreshScreen() {
-        mainWindow.refreshMainWindow("/prog/pbl/AdmTela01.fxml");
+        mainWindow.refreshMainWindow("/prog/pbl/LibrarianHomePage.fxml");
 
     }
 
@@ -147,5 +135,4 @@ public class AdmTela01 implements Initializable{
             }
         }
     }
-
 }

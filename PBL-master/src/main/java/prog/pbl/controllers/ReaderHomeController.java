@@ -1,28 +1,15 @@
 package prog.pbl.controllers;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.text.Text;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 import prog.pbl.dao.MasterDao;
-import prog.pbl.model.Sistema;
 import prog.pbl.model.estoque.Livro;
-import prog.pbl.model.usuarios.Administrador;
-import prog.pbl.model.usuarios.Pessoa;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.LinkedList;
 import java.util.List;
@@ -33,9 +20,9 @@ import static prog.pbl.controllers.ListLivrosController.listLivrosController;
 import static prog.pbl.controllers.MainWindow.mainWindow;
 import static prog.pbl.controllers.MainWindow.openPage;
 
-public class BibliotecarioTela01 implements Initializable{
+public class ReaderHomeController implements Initializable{
 
-    static BibliotecarioTela01 bibliotecarioTela01;
+    static ReaderHomeController readerHomeController;
 
     @FXML
     private BorderPane secondBorderPane;
@@ -53,7 +40,7 @@ public class BibliotecarioTela01 implements Initializable{
 
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        bibliotecarioTela01 = this;
+        readerHomeController = this;
         this.setScreen();
     }
 
@@ -61,10 +48,9 @@ public class BibliotecarioTela01 implements Initializable{
     void setScreen() {
 
 
-        mainBorderPane.setLeft(openPage("/prog/pbl/userAreaPage.fxml"));
+        mainBorderPane.setLeft(openPage("/prog/pbl/UserAreaPage.fxml"));
         secondBorderPane.setTop(openPage("/prog/pbl/ListLivrosPage.fxml"));
         secondBorderPane.setBottom(openPage("/prog/pbl/ListReservasPage.fxml"));
-
         listLivrosController.setListView(MasterDao.getLivroDao().findAll());
 
         searchTypeChoiceBox.getItems().addAll("Isbn","Categoria","Autor", "Nome", "Mais populares");
@@ -75,6 +61,7 @@ public class BibliotecarioTela01 implements Initializable{
                 searchFunction();
             }
         });
+
     }
 
     @FXML
@@ -94,8 +81,7 @@ public class BibliotecarioTela01 implements Initializable{
 
     @FXML
     public void refreshScreen() {
-        mainWindow.refreshMainWindow("/prog/pbl/LibTela01.fxml");
-
+        mainWindow.refreshMainWindow("/prog/pbl/ReaderHomePage.fxml");
     }
 
     @FXML

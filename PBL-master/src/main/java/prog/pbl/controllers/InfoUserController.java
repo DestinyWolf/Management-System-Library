@@ -1,36 +1,23 @@
 package prog.pbl.controllers;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.text.Text;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
-import prog.pbl.LibraryException.usersexcepitions.LeitorException;
 import prog.pbl.dao.MasterDao;
 import prog.pbl.model.Sistema;
-import prog.pbl.model.estoque.Livro;
 import prog.pbl.model.usuarios.Administrador;
 import prog.pbl.model.usuarios.Bibliotecario;
 import prog.pbl.model.usuarios.Leitor;
-import prog.pbl.model.usuarios.Pessoa;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 
-import static prog.pbl.controllers.AdmTela01.admTela01;
-import static prog.pbl.controllers.BibliotecarioTela01.bibliotecarioTela01;
-import static prog.pbl.controllers.LeitorTela01.leitorTela01;
+import static prog.pbl.controllers.AdmHomeController.admHomeController;
+import static prog.pbl.controllers.LibarianHomeController.libarianHomeController;
+import static prog.pbl.controllers.ReaderHomeController.readerHomeController;
 import static prog.pbl.controllers.MainWindow.mainWindow;
-import static prog.pbl.controllers.MainWindow.openPage;
 
 public class InfoUserController implements Initializable{
 
@@ -207,7 +194,7 @@ public class InfoUserController implements Initializable{
                     alert.setTitle("Concluido");
                     alert.setContentText("Usuario " + ((Administrador) obj).getNome() + " deletado com sucesso");
                     alert.showAndWait();
-                    admTela01.refreshScreen();
+                    admHomeController.refreshScreen();
                 } catch (Exception e) {
                     alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Erro");
@@ -222,13 +209,13 @@ public class InfoUserController implements Initializable{
                     alert.setTitle("Concluido");
                     alert.setContentText("Usuario " + ((Bibliotecario) obj).getNome() + " deletado com sucesso");
                     alert.showAndWait();
-                    admTela01.refreshScreen();
+                    admHomeController.refreshScreen();
                 } catch (Exception e) {
                     alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("vixe, deu ruim");
                     alert.setContentText(e.getMessage());
                     alert.show();
-                    admTela01.refreshScreen();
+                    admHomeController.refreshScreen();
                 }
             }
             case 2 -> {
@@ -302,8 +289,8 @@ public class InfoUserController implements Initializable{
 
 
 
-                    admTela01.refreshScreen();
-                    admTela01.callToShowInRight(url);
+                    admHomeController.refreshScreen();
+                    admHomeController.callToShowInRight(url);
                     infoUserController.setUser(administrador);
                 } catch (Exception e) {
                     alert.setContentText(e.getMessage());
@@ -317,11 +304,11 @@ public class InfoUserController implements Initializable{
 
                     if((Bibliotecario)obj == Sistema.getSessaoAtualBibliotecario()){
                         Sistema.setSessaoAtualBibliotecario(bibliotecario);
-                        bibliotecarioTela01.refreshScreen();
-                        bibliotecarioTela01.callToShowInRight(url);
+                        libarianHomeController.refreshScreen();
+                        libarianHomeController.callToShowInRight(url);
                     } else {
-                        admTela01.refreshScreen();
-                        admTela01.callToShowInRight(url);
+                        admHomeController.refreshScreen();
+                        admHomeController.callToShowInRight(url);
                     }
                     infoUserController.setUser(bibliotecario);
                 } catch (Exception e) {
@@ -337,11 +324,11 @@ public class InfoUserController implements Initializable{
 
                     if((Leitor)obj == Sistema.getSessaoAtualLeitor()){
                         Sistema.setSessaoAtualLeitor(leitor);
-                        leitorTela01.refreshScreen();
-                        leitorTela01.callToShowInRight(url);
+                        readerHomeController.refreshScreen();
+                        readerHomeController.callToShowInRight(url);
                     }else{
-                        admTela01.refreshScreen();
-                        admTela01.callToShowInRight(url);
+                        admHomeController.refreshScreen();
+                        admHomeController.callToShowInRight(url);
                     }
                     infoUserController.setUser(leitor);
 

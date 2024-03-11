@@ -15,14 +15,13 @@ import prog.pbl.model.estoque.Livro;
 import prog.pbl.util.Data;
 
 import java.net.URL;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
-import static prog.pbl.controllers.AdmTela01.admTela01;
-import static prog.pbl.controllers.BibliotecarioTela01.bibliotecarioTela01;
-import static prog.pbl.controllers.LeitorTela01.leitorTela01;
+import static prog.pbl.controllers.AdmHomeController.admHomeController;
+import static prog.pbl.controllers.LibarianHomeController.libarianHomeController;
+import static prog.pbl.controllers.ReaderHomeController.readerHomeController;
 
-public class EmprestimoCreateController implements Initializable{
+public class LoanCreateController implements Initializable{
     private Stage stage;
     private Livro livro;
 
@@ -56,27 +55,27 @@ public class EmprestimoCreateController implements Initializable{
     @FXML
     private Button editBtn;
 
-    public static EmprestimoCreateController emprestimoCreateController;
+    public static LoanCreateController loanCreateController;
 
     @FXML
     void voltarButtonAction(ActionEvent event) {
         switch (Sistema.currentLogMember()){
-            case 0 -> admTela01.refreshScreen();
-            case 1 -> bibliotecarioTela01.refreshScreen();
-            case 2 -> leitorTela01.refreshScreen();
+            case 0 -> admHomeController.refreshScreen();
+            case 1 -> libarianHomeController.refreshScreen();
+            case 2 -> readerHomeController.refreshScreen();
         }
 
     }
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        emprestimoCreateController = this;
+        loanCreateController = this;
         this.setStage(stage);
     }
 
 
     public void setStage(Stage stage) {
         this.stage = stage;
-        emprestimoCreateController = this;
+        loanCreateController = this;
     }
 
     public void setEmprestimo(Livro livro) {
@@ -114,8 +113,8 @@ public class EmprestimoCreateController implements Initializable{
             alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Concluido");
             alert.setContentText("Emprestimo criado com sucesso");
-            bibliotecarioTela01.callToShowInRight("/prog/pbl/AnaliseEmprestimo.fxml");
-            AnaliseEmprestimo.analiseEmprestimo.setEmprestimo(emprestimo);
+            libarianHomeController.callToShowInRight("/prog/pbl/InfoLoanPage.fxml");
+            InfoLoanController.infoLoanController.setEmprestimo(emprestimo);
             alert.show();
         } catch (Exception e) {
             alert = new Alert(Alert.AlertType.ERROR);

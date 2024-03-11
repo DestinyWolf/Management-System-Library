@@ -10,19 +10,17 @@ import javafx.scene.control.cell.TextFieldListCell;
 import javafx.stage.Stage;
 import prog.pbl.dao.MasterDao;
 import prog.pbl.model.Sistema;
-import prog.pbl.model.emprestimo.Emprestimo;
 import prog.pbl.model.estoque.Livro;
 
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import static prog.pbl.controllers.AdmTela01.admTela01;
-import static prog.pbl.controllers.AnaliseEmprestimo.analiseEmprestimo;
-import static prog.pbl.controllers.AnaliseLivro.analiseLivro;
-import static prog.pbl.controllers.BibliotecarioTela01.bibliotecarioTela01;
+import static prog.pbl.controllers.AdmHomeController.admHomeController;
+import static prog.pbl.controllers.InfoBookController.infoBookController;
+import static prog.pbl.controllers.LibarianHomeController.libarianHomeController;
 import static prog.pbl.controllers.GuestHomeController.guestHomeController;
-import static prog.pbl.controllers.LeitorTela01.leitorTela01;
+import static prog.pbl.controllers.ReaderHomeController.readerHomeController;
 
 
 public class ListLivrosController implements Initializable {
@@ -74,17 +72,17 @@ public class ListLivrosController implements Initializable {
             String id = text.substring(text.indexOf("`")+1);
             try {
                 Livro livro = MasterDao.getLivroDao().findById(id);
-                String url = "/prog/pbl/AnaliseLivroPage.fxml";
+                String url = "/prog/pbl/InfoBookPage.fxml";
 
                 switch (Sistema.currentLogMember()){
-                    case 0 -> admTela01.callToShowInRight(url);
-                    case 1 -> bibliotecarioTela01.callToShowInRight(url);
-                    case 2 -> leitorTela01.callToShowInRight(url);
+                    case 0 -> admHomeController.callToShowInRight(url);
+                    case 1 -> libarianHomeController.callToShowInRight(url);
+                    case 2 -> readerHomeController.callToShowInRight(url);
                     case 3 -> guestHomeController.callToShowInRight(url);
                 }
 
 
-                analiseLivro.setLivro(livro);
+                infoBookController.setLivro(livro);
             } catch (Exception e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText(e.getMessage());

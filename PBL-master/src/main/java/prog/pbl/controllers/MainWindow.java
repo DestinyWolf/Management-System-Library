@@ -42,19 +42,19 @@ public class MainWindow implements Initializable {
 
     @FXML
     public void callLoginScreen(){
-        this.refreshMainWindow("/prog/pbl/hello-view.fxml");
+        this.refreshMainWindow("/prog/pbl/LoginPage.fxml");
     }
 
     @FXML
     public void callAdministratorHomeScreen(){
-        this.refreshMainWindow("/prog/pbl/AdmTela01.fxml");
+        this.refreshMainWindow("/prog/pbl/AdmHomePage.fxml");
     }
 
     @FXML
-    public void callLibrarianHomeScreen() {this.refreshMainWindow("/prog/pbl/LibTela01.fxml");}
+    public void callLibrarianHomeScreen() {this.refreshMainWindow("/prog/pbl/LibrarianHomePage.fxml");}
 
     @FXML
-    public void callReaderHomeScreen() {this.refreshMainWindow("/prog/pbl/LeitorTela01.fxml");}
+    public void callReaderHomeScreen() {this.refreshMainWindow("/prog/pbl/ReaderHomePage.fxml");}
 
     @FXML
     public void callGuestHomeScreen() {this.refreshMainWindow("/prog/pbl/GuestHomePage.fxml");}
