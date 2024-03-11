@@ -1,0 +1,38 @@
+
+Login adm
+35820368045
+senha 123
+
+
+Login bibliotecario
+80458433063
+senha 123
+
+Login Leitor
+33601777037
+senha 123
+
+
+Bug, se criar um novo leitor ele empresta um livro ja emprestado
+bug, a quantidade de livros está bugada
+bug, Relatorio só atualiza quando o programa fecha
+no relatorio, o disponivel ta bugado
+
+
+Atualizado dia 13/02
+Para concluir o renovação, precisei adiantar o reserva (Renovação está incompleto, dando erro em classe Emprestimo, linha 175)
+
+
+ATUALIZAÇÃO 15/02
+problema na hora de retirar da reserva
+
+
+
+
+(Problema quando empresta o livro; ele ta botando numEmprestimo do leitor para 0 e nao 1;
+quando devolve o livro, o usuario nao consegue fazer outro emprestimo, o problema está na hora de salvar no dao
+na parte do getnumEmprestimo;]
+
+ou seja, o problema está no numEmprestimo; tente resolve-lo) Está parcialmente resolvido, pois ele consegue fazer o emprestimo devolvendo, todavia, caso o livro nao
+esteja emprestado, ele consegue pegar mais de 2. Bug ai
+

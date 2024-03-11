@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prog.pbl.controllers.UserAreaController">
+   <children>
+      <ImageView fx:id="profileBtn" fitHeight="160.0" fitWidth="202.0" layoutX="95.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../assests/profile.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Button fx:id="reservaBtn" layoutX="121.0" layoutY="247.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="109.0" text="Reserva" />
+      <Button fx:id="emprestimoBtn" layoutX="121.0" layoutY="289.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="109.0" text="Emprestimo" />
+      <Button fx:id="relatorioBtn" layoutX="121.0" layoutY="332.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="109.0" text="Relatorios" />
+      <Button fx:id="gerenciamentoBtn" layoutX="121.0" layoutY="381.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="109.0" text="Criar" />
+      <Button fx:id="logOutBtn" layoutX="22.0" layoutY="481.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="79.0" text="Log out" />
+      <ChoiceBox fx:id="createBox" layoutX="121.0" layoutY="422.0" prefHeight="25.0" prefWidth="109.0" />
+   </children>
+</Pane>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prog.pbl.controllers.AnaliseLivro">
+   <children>
+      <Label fx:id="labelLivro" layoutX="157.0" layoutY="76.0" text="titulo" textAlignment="CENTER">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelLeitor" layoutX="155.0" layoutY="125.0" text="autor">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="25.0" layoutY="174.0" text="localização">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelDataDevolucao" layoutX="28.0" layoutY="287.0" text="editora">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="243.0" layoutY="226.0" text="quantidade disponivel">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="201.0" layoutY="174.0" text="isbn">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="226.0" text="categoria">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="139.0" layoutY="226.0" text="ano de publicação">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nomeText" alignment="CENTER" editable="false" layoutX="21.0" layoutY="93.0" prefHeight="25.0" prefWidth="299.0" promptText="Livro Emprestado">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="autorText" alignment="CENTER" editable="false" layoutX="21.0" layoutY="142.0" prefHeight="25.0" prefWidth="299.0" promptText="Leitor">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="localizacaoText" alignment="CENTER" editable="false" layoutX="23.0" layoutY="191.0" prefHeight="25.0" prefWidth="112.0" promptText="00/00/0000">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="editoraText" alignment="CENTER" editable="false" layoutX="23.0" layoutY="305.0" prefHeight="25.0" prefWidth="112.0" promptText="00/00/0000">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="qntText" editable="false" layoutX="267.0" layoutY="248.0" prefHeight="25.0" prefWidth="48.0" promptText="0">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idText" alignment="CENTER" editable="false" layoutX="153.0" layoutY="191.0" prefHeight="25.0" prefWidth="194.0" promptText="123123123">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="categoriaText" alignment="CENTER" editable="false" layoutX="23.0" layoutY="248.0" prefHeight="25.0" prefWidth="112.0" promptText="00/00/0000">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="anoText" alignment="CENTER" editable="false" layoutX="145.0" layoutY="248.0" prefHeight="25.0" prefWidth="80.0" promptText="Não">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </TextField>
+      <Button fx:id="voltarButton" layoutX="278.0" layoutY="467.0" mnemonicParsing="false" onAction="#voltarButtonAction" style="-fx-background-color: gray;" text="Voltar" />
+      <Button fx:id="deleteBtn" layoutX="154.0" layoutY="467.0" mnemonicParsing="false" text="Delete" />
+      <Button fx:id="editBtn" layoutX="28.0" layoutY="467.0" mnemonicParsing="false" text="Edit" />
+      <TextField fx:id="qntBuscasText" editable="false" layoutX="162.0" layoutY="305.0" />
+      <Label layoutX="166.0" layoutY="287.0" text="Quantidade de Buscas" />
+   </children>
+</Pane>

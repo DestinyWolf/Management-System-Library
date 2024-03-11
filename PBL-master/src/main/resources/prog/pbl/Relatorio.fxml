@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prog.pbl.controllers.Relatorio">
+   <children>
+      <Label layoutX="103.0" layoutY="22.0" text="Relatorio">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="21.0" layoutY="99.0" text="Quantidade de livros emprestado:">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="23.0" layoutY="260.0" text="Quantidade de livros:">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="21.0" layoutY="175.0" text="Quantidade de livros atrasados:">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="QntLivrosEmprestado" layoutX="21.0" layoutY="125.0">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="QntLivrosAtrasados" layoutX="21.0" layoutY="201.0">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="QntLivros" layoutX="21.0" layoutY="282.0">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </TextField>
+      <Button fx:id="voltarButton" layoutX="21.0" layoutY="446.0" mnemonicParsing="false" onAction="#voltarButtonAction" style="-fx-background-color: gray;" text="Voltar" />
+      <Button fx:id="AtualizarButton" layoutX="257.0" layoutY="446.0" mnemonicParsing="false" onAction="#AtualizarButtonAction" style="-fx-background-color: gray;" text="Atualizar" />
+   </children>
+</Pane>

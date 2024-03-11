@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="mainBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prog.pbl.controllers.LeitorTela01">
+   <top>
+      <Pane>
+         <TextField fx:id="searchInputText" layoutX="24.0" layoutY="45.0" prefHeight="25.0" prefWidth="782.0" promptText="Pesquisar" />
+         <Button fx:id="searchBtn" layoutX="818.0" layoutY="45.0" mnemonicParsing="false" text="🔎" />
+         <ChoiceBox fx:id="searchTypeChoiceBox" layoutX="867.0" layoutY="45.0" prefWidth="150.0" />
+      </Pane>
+   </top>
+   <center>
+      <BorderPane fx:id="secondBorderPane" maxHeight="500.0"  prefHeight="500.0" prefWidth="360.0" BorderPane.alignment="CENTER">
+
+      </BorderPane>
+   </center>
+
+</BorderPane>

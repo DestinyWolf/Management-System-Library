@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prog.pbl.controllers.BookCreateController">
+    <children>
+        <Label fx:id="labelLivro" layoutX="157.0" layoutY="76.0" text="Titulo" textAlignment="CENTER">
+            <font>
+                <Font size="12.0" />
+            </font>
+        </Label>
+        <Label fx:id="labelLeitor" layoutX="155.0" layoutY="125.0" text="Autor">
+            <font>
+                <Font size="12.0" />
+            </font>
+        </Label>
+        <Label layoutX="25.0" layoutY="174.0" text="Localização">
+            <font>
+                <Font size="12.0" />
+            </font>
+        </Label>
+        <Label fx:id="labelDataDevolucao" layoutX="28.0" layoutY="287.0" text="editora">
+            <font>
+                <Font size="12.0" />
+            </font>
+        </Label>
+        <Label layoutX="243.0" layoutY="226.0" text="Quantidade">
+            <font>
+                <Font size="12.0" />
+            </font>
+        </Label>
+        <Label layoutX="201.0" layoutY="174.0" text="isbn">
+            <font>
+                <Font size="12.0" />
+            </font>
+        </Label>
+        <Label layoutX="33.0" layoutY="226.0" text="Categoria">
+            <font>
+                <Font size="12.0" />
+            </font>
+        </Label>
+        <Label layoutX="139.0" layoutY="226.0" text="Ano de Publicação">
+            <font>
+                <Font size="12.0" />
+            </font>
+        </Label>
+        <TextField fx:id="nomeText" alignment="CENTER" layoutX="21.0" layoutY="93.0" prefHeight="25.0" prefWidth="299.0" promptText="Titulo do Livro">
+            <font>
+                <Font size="12.0" />
+            </font>
+        </TextField>
+        <TextField fx:id="autorText" alignment="CENTER" layoutX="21.0" layoutY="142.0" prefHeight="25.0" prefWidth="299.0" promptText="Nome Autor">
+            <font>
+                <Font size="12.0" />
+            </font>
+        </TextField>
+        <TextField fx:id="localizacaoText" alignment="CENTER" layoutX="23.0" layoutY="191.0" prefHeight="25.0" prefWidth="112.0" promptText="Localização do Livro">
+            <font>
+                <Font size="12.0" />
+            </font>
+        </TextField>
+        <TextField fx:id="editoraText" alignment="CENTER" layoutX="23.0" layoutY="305.0" prefHeight="25.0" prefWidth="112.0" promptText="Editora">
+            <font>
+                <Font size="12.0" />
+            </font>
+        </TextField>
+        <TextField fx:id="qntText" layoutX="267.0" layoutY="248.0" prefHeight="25.0" prefWidth="48.0" promptText="0">
+            <font>
+                <Font size="12.0" />
+            </font>
+        </TextField>
+        <TextField fx:id="idText" alignment="CENTER" layoutX="153.0" layoutY="191.0" prefHeight="25.0" prefWidth="194.0" promptText="Cod.: ISBN">
+            <font>
+                <Font size="12.0" />
+            </font>
+        </TextField>
+        <TextField fx:id="categoriaText" alignment="CENTER" layoutX="23.0" layoutY="248.0" prefHeight="25.0" prefWidth="112.0" promptText="Categoria">
+            <font>
+                <Font size="12.0" />
+            </font>
+        </TextField>
+        <TextField fx:id="anoText" alignment="CENTER" layoutX="145.0" layoutY="248.0" prefHeight="25.0" prefWidth="80.0" promptText="0000">
+            <font>
+                <Font size="12.0" />
+            </font>
+        </TextField>
+        <Button fx:id="voltarButton" layoutX="278.0" layoutY="467.0" mnemonicParsing="false" onAction="#voltarButtonAction" style="-fx-background-color: gray;" text="Voltar" />
+        <Button fx:id="editBtn" layoutX="28.0" layoutY="467.0" mnemonicParsing="false" text="Save" />
+    </children>
+</Pane>
