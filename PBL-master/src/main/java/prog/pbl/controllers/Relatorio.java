@@ -4,20 +4,23 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import prog.pbl.model.relatorio.Relatorios;
+
+import static prog.pbl.controllers.AdmTela01.admTela01;
 
 public class Relatorio {
 
     @FXML
-    private Label QntLivros;
+    private TextField QntLivros;
 
 
     @FXML
-    private Label QntLivrosAtrasados;
+    private TextField QntLivrosAtrasados;
 
     @FXML
-    private Label QntLivrosEmprestado;
+    private TextField QntLivrosEmprestado;
     private Stage stage;
     @FXML
     private Button voltarButton;
@@ -46,7 +49,7 @@ public class Relatorio {
 
     @FXML
     void voltarButtonAction(ActionEvent event) {
-        this.stage.close();
+        admTela01.refreshScreen();
     }
 
     public void setStage(Stage stage) {
